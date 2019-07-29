@@ -17,13 +17,12 @@
 	},
 	"title": "El sitio de Favi0",
 	"gitalk": {
-		"repo": "fnaquira.github.io/favi0-blog",
+		"repo": "favi0-blog",
 		"admin": ["fnaquira"],
 		"owner": "fnaquira",
 		"clientID": "d4d08696c1dc68477e31",
 		"clientSecret": "f92a1b5124979f4476d8b205e0e1715d192e533c",
-		"pagerDirection": "first",
-		"distractionFreeMode": true
+		"pagerDirection": "first"
 	},
 	"License": "by",
 	"friends": [
