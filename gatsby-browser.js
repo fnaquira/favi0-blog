@@ -6,9 +6,7 @@ import installFontAwesome from './src/api/installFontAwesome';
 
 import 'prismjs/themes/prism-solarizedlight.css';
 
-const {
-  url, gaTrackId, gaOptimizeId,
-} = config;
+const { url, gaTrackId, gaOptimizeId } = config;
 
 installFontAwesome();
 
@@ -26,7 +24,7 @@ if (isLocalDevelopment() === false) {
 
 // Inspired by APlayer
 console.log(
-  `${'\n'} %c CALPA %c https://calpa.me ${'\n'}${'\n'}`,
+  `${'\n'} %c Favi0 %c https://favi0.com ${'\n'}${'\n'}`,
   'color: #6cf; background: #030307; padding:5px 0;',
   'background: #6cf; padding:5px 0;',
 );

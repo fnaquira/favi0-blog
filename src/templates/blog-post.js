@@ -32,75 +32,77 @@ const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
 class BlogPost extends Component {
-	constructor(props) {
-		super(props);
-		this.data = this.props.data;
-	}
+  constructor(props) {
+    super(props);
+    this.data = this.props.data;
+  }
 
-	componentDidMount() {
-		const { frontmatter, id: graphqlId } = this.data.content.edges[0].node;
-		const { title, id } = frontmatter;
+  componentDidMount() {
+    const { frontmatter, id: graphqlId } = this.data.content.edges[0].node;
+    const { title, id } = frontmatter;
 
-		const GitTalkInstance = new Gitalk({
-			...gitalk,
-			title,
-			id: id || graphqlId
-		});
-		GitTalkInstance.render('gitalk-container');
-	}
+    const GitTalkInstance = new Gitalk({
+      ...gitalk,
+      title,
+      id: id || graphqlId,
+    });
+    GitTalkInstance.render('gitalk-container');
+  }
 
-	render() {
-		const { node } = this.data.content.edges[0];
+  render() {
+    const { node } = this.data.content.edges[0];
 
-		const { html, frontmatter, fields, excerpt } = node;
+    const {
+      html, frontmatter, fields, excerpt,
+    } = node;
 
-		const { slug } = fields;
+    const { slug } = fields;
 
-		const { date, headerImage, title } = frontmatter;
+    const { date, headerImage, title } = frontmatter;
 
-		return (
-			<div className="row post order-2">
-				<Header
-					img={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
-					title={title}
-					authorName={name}
-					authorImage={iconUrl}
-					subTitle={parseChineseDate(date)}
-				/>
-				<Sidebar />
-				<div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
-					<Content post={html} />
-					<div className="m-message" style={bgWhite}>
+    return (
+      <div className="row post order-2">
+        <Header
+          img={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
+          title={title}
+          authorName={name}
+          authorImage={iconUrl}
+          subTitle={parseChineseDate(date)}
+        />
+        <Sidebar />
+        <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
+          <Content post={html} />
+          <div className="m-message" style={bgWhite}>
 						Si crees que mi artículo es útil para ti, espero que puedas
 						recomendarlo y comunicarte. Bienvenido
-						<ExternalLink
-							href="https://github.com/calpa/gatsby-starter-calpa-blog"
-							title="關注和 Star 本博客"
-						/>
+            <ExternalLink
+              href="https://github.com/calpa/gatsby-starter-calpa-blog"
+              title="關注和 Star 本博客"
+            />
 						o
-						<ExternalLink
-							href="https://github.com/fnaquira/"
-							title="Github de Favi0"
-						/>
+            <ExternalLink
+              href="https://github.com/fnaquira/"
+              title="Github de Favi0"
+            />
 						。
-					</div>
+          </div>
 
-					<div id="gitalk-container" />
-				</div>
+          <div id="gitalk-container" />
+        </div>
 
-				<ShareBox url={slug} />
+        <ShareBox url={slug} />
 
-				<SEO
-					title={title}
-					url={slug}
-					siteTitleAlt="Calpa's Blog"
-					isPost={false}
-					description={excerpt}
-					image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
-				/>
-			</div>
-		);
-	}
+        <SEO
+          title={title}
+          url={slug}
+          siteTitleAlt="Calpa's Blog"
+          isPost={false}
+          description={excerpt}
+          image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
+        />
+      </div>
+    );
+  }
 }
 
 export const pageQuery = graphql`

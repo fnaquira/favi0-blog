@@ -9,17 +9,17 @@ import './index.scss';
 const { friends = [] } = config;
 
 const Friend = () => (
-	<div className="friend">
-		<p>Amigos a quienes sigo</p>
-		{friends.map(friend => (
-			<ExternalLink
-				href={friend.href}
-				title={friend.title}
-				key={friend.title}
-				rel="noopener"
-			/>
-		))}
-	</div>
+  <div className="friend">
+    <p>Amigos a quienes sigo</p>
+    {friends.map(friend => (
+      <ExternalLink
+        href={friend.href}
+        title={friend.title}
+        key={friend.title}
+        rel="noopener"
+      />
+    ))}
+  </div>
 );
 
 export default Friend;

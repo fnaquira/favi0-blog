@@ -8,7 +8,7 @@
 		"google_site_verification": "riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io"
 	},
 	"name": "favi0",
-	"about": "/2018/05/01/about-calpa-liu/",
+	"about": "/2018/05/01/about-favi0/",
 	"email": "fnaquiravargas@gmail.com",
 	"stats": {
 		"image": "https://i.imgur.com/VjBWiSt.png",
@@ -43,21 +43,17 @@
 	"gaTrackId": "UA-84737574-3",
 	"navbarList": [
 		{
-			"href": "/guestbook/",
-			"title": "留言簿"
-		},
-		{
 			"href": "/tags/",
 			"title": "Tags"
 		},
 		{
-			"href": "/2018/05/01/about-calpa-liu/",
-			"title": "關於作者"
+			"href": "/2018/05/01/about-favi0/",
+			"title": "Sobre el autor"
 		}
 	],
 	"redirectors": [
 		{
-			"toPath": "/2018/05/01/about-calpa-liu/",
+			"toPath": "/2018/05/01/about-favi0/",
 			"fromPath": "/about/"
 		}
 	],
@@ -68,8 +64,7 @@
 			"target": "/stats/"
 		}
 	],
-	"zhihuUsername": "piao-xue-wu-ying",
 	"githubUsername": "fnaquira",
 	"maxPostsInPage": 10,
-	"facebook": "calpablog"
+	"facebook": "fnaquira"
 }
